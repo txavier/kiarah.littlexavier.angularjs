@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiarah.LittleXavier", "kiarah.littlexavier\Kiarah.LittleXavier.csproj", "{C04734AC-03C5-428C-A2B6-CF2668054533}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Projects", "Test Projects", "{6B2E7D1A-CC40-4EEC-9A62-BAA27056AD92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiarah.LittleXavier.Core", "Kiarah.LittleXavier.Core\Kiarah.LittleXavier.Core.csproj", "{5CAEF9E3-821A-4277-95ED-9CB2DE7E1312}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiarah.LittleXavier.Infrastructure", "Kiarah.LittleXavier.Infrastructure\Kiarah.LittleXavier.Infrastructure.csproj", "{D066AAAD-D6A1-4372-9AF8-CE3BC15B7962}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiarah.LittleXavier.CompositionRoot", "Kiarah.LittleXavier.CompositionRoot\Kiarah.LittleXavier.CompositionRoot.csproj", "{D7532808-467B-439C-95E7-D32298304065}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiarah.LittleXavier.Data", "Kiarah.LittleXavier.Data\Kiarah.LittleXavier.Data.csproj", "{5AE33908-A9A3-4A55-80D6-C2076CC4DEBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiarah.LittleXavier.IntegrationTests", "Kiarah.LittleXavier.IntegrationTests\Kiarah.LittleXavier.IntegrationTests.csproj", "{8C39FFEF-6297-4F70-AC28-9B564DF00C78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiarah.LittleXavier.UnitTests", "Kiarah.LittleXavier.UnitTests\Kiarah.LittleXavier.UnitTests.csproj", "{A9E00189-F45F-4DF0-AE67-97A0EDD0D6C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2CBF478E-A90B-4538-8539-4E74848D29C4}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C04734AC-03C5-428C-A2B6-CF2668054533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C04734AC-03C5-428C-A2B6-CF2668054533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C04734AC-03C5-428C-A2B6-CF2668054533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C04734AC-03C5-428C-A2B6-CF2668054533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CAEF9E3-821A-4277-95ED-9CB2DE7E1312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CAEF9E3-821A-4277-95ED-9CB2DE7E1312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CAEF9E3-821A-4277-95ED-9CB2DE7E1312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CAEF9E3-821A-4277-95ED-9CB2DE7E1312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D066AAAD-D6A1-4372-9AF8-CE3BC15B7962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D066AAAD-D6A1-4372-9AF8-CE3BC15B7962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D066AAAD-D6A1-4372-9AF8-CE3BC15B7962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D066AAAD-D6A1-4372-9AF8-CE3BC15B7962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7532808-467B-439C-95E7-D32298304065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7532808-467B-439C-95E7-D32298304065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7532808-467B-439C-95E7-D32298304065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7532808-467B-439C-95E7-D32298304065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AE33908-A9A3-4A55-80D6-C2076CC4DEBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AE33908-A9A3-4A55-80D6-C2076CC4DEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AE33908-A9A3-4A55-80D6-C2076CC4DEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AE33908-A9A3-4A55-80D6-C2076CC4DEBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C39FFEF-6297-4F70-AC28-9B564DF00C78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C39FFEF-6297-4F70-AC28-9B564DF00C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C39FFEF-6297-4F70-AC28-9B564DF00C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C39FFEF-6297-4F70-AC28-9B564DF00C78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9E00189-F45F-4DF0-AE67-97A0EDD0D6C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9E00189-F45F-4DF0-AE67-97A0EDD0D6C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9E00189-F45F-4DF0-AE67-97A0EDD0D6C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9E00189-F45F-4DF0-AE67-97A0EDD0D6C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C39FFEF-6297-4F70-AC28-9B564DF00C78} = {6B2E7D1A-CC40-4EEC-9A62-BAA27056AD92}
+		{A9E00189-F45F-4DF0-AE67-97A0EDD0D6C4} = {6B2E7D1A-CC40-4EEC-9A62-BAA27056AD92}
+	EndGlobalSection
+EndGlobal
