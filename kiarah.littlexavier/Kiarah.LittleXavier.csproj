@@ -121,9 +121,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\Main.SmartBlog.Modified.css" />
-    <Content Include="css\style.css" />
+    <Content Include="Content\dist\css\app.css" />
+    <Content Include="Content\dist\css\app.min.css" />
+    <Content Include="Content\Main.SmartBlog.Modified.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="gulpfile.js" />
     <Content Include="images\2014-11-09.jpg" />
     <Content Include="images\apple-touch-icon-114-precomposed.png" />
     <Content Include="images\apple-touch-icon-144-precomposed.png" />
@@ -133,8 +135,9 @@
     <Content Include="images\dsc_0642.jpg" />
     <Content Include="images\favicon.png" />
     <Content Include="index.html" />
-    <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\scripts.js" />
+    <Content Include="Scripts\bootstrap-bundle.min.js" />
+    <Content Include="Scripts\jquery-bundle.min.js" />
+    <Content Include="Scripts\modernizer-min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -148,7 +151,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="js\jquery.min.js" />
+    <Content Include="bower.json" />
+    <Content Include="Scripts\maps\bootstrap-bundle.min.js.map" />
+    <Content Include="Scripts\maps\modernizer-min.js.map" />
+    <None Include="Properties\PublishProfiles\kiarah.littlexavier.com - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -159,7 +165,6 @@
   <ItemGroup>
     <Folder Include="app\templates\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kiarah.LittleXavier.CompositionRoot\Kiarah.LittleXavier.CompositionRoot.csproj">
