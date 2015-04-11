@@ -155,3 +155,5 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+/kiarah.littlexavier/bower_components
+/kiarah.littlexavier/node_modules

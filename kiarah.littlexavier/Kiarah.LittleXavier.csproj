@@ -121,6 +121,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.js" />
     <Content Include="Content\dist\css\app.css" />
     <Content Include="Content\dist\css\app.min.css" />
     <Content Include="Content\Main.SmartBlog.Modified.css" />
@@ -135,6 +136,7 @@
     <Content Include="images\dsc_0642.jpg" />
     <Content Include="images\favicon.png" />
     <Content Include="index.html" />
+    <Content Include="Scripts\angular-local-storage.min.js" />
     <Content Include="Scripts\bootstrap-bundle.min.js" />
     <Content Include="Scripts\jquery-bundle.min.js" />
     <Content Include="Scripts\modernizer-min.js" />

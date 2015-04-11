@@ -29,12 +29,23 @@ var config = {
     modernizrsrc: ['bower_components/modernizr/modernizr.js'],
     modernizrbundle: 'Scripts/modernizer.min.js',
 
+    //Angular
+    angularsrc: [
+        'bower_components/angular/angular.min.js',
+        'Scripts/angular-local-storage.min.js',
+        'bower_components/angular-loading-bar/loading-bar.min.js'
+    ],
+    angularbundle: 'Scripts/angular-bundle.min.js',
+
     //Bootstrap CSS and Fonts
     bootstrapcss: 'bower_components/bootstrap/dist/css/bootstrap.css',
     boostrapfonts: 'bower_components/bootstrap/dist/fonts/*.*',
 
     // SmartBlog CSS
     smartblogcss: 'Content/Main.SmartBlog.Modified.css',
+
+    // Angular-Loading-Bar CSS
+    angularloadingbarcss: 'bower_components/angular-loading-bar/loading-bar.min.css',
 
     stylecss: 'Content/style.css',
     appcss: 'Content/Site.css',
@@ -47,7 +58,8 @@ var config = {
 gulp.task('clean-vendor-scripts', function (cb) {
     del([config.jquerybundle,
               config.bootstrapbundle,
-              config.modernizrbundle], cb);
+              config.modernizrbundle,
+              config.angularbundle], cb);
 });
 
 //Create a jquery bundled file
@@ -76,8 +88,17 @@ gulp.task('modernizer', ['clean-vendor-scripts', 'bower-restore'], function () {
         .pipe(gulp.dest('Scripts'));
 });
 
+//Create an angular bundled file
+gulp.task('angular-bundle', ['clean-vendor-scripts', 'bower-restore'], function () {
+    return gulp.src(config.angularsrc)
+        .pipe(sourcemaps.init())
+        .pipe(concat('angular-bundle.min.js'))
+        .pipe(sourcemaps.write('maps'))
+        .pipe(gulp.dest('Scripts'));
+});
+
 // Combine and the vendor files from bower into bundles (output to the Scripts folder)
-gulp.task('vendor-scripts', ['jquery-bundle', 'bootstrap-bundle', 'modernizer'], function () {
+gulp.task('vendor-scripts', ['jquery-bundle', 'bootstrap-bundle', 'modernizer', 'angular-bundle'], function () {
 
 });
 
@@ -88,7 +109,7 @@ gulp.task('clean-styles', function (cb) {
 });
 
 gulp.task('css', ['clean-styles', 'bower-restore'], function () {
-    return gulp.src([config.stylecss, config.bootstrapcss, config.appcss, config.smartblogcss])
+    return gulp.src([config.stylecss, config.bootstrapcss, config.appcss, config.smartblogcss, config.angularloadingbarcss])
      .pipe(concat('app.css'))
      .pipe(gulp.dest(config.cssout))
      .pipe(minifyCSS())
