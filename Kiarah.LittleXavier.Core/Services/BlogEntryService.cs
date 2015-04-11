@@ -3,7 +3,6 @@ using AutoClutch.Auto.Service.Services;
 using Kiarah.LittleXavier.Core.Interfaces;
 using Kiarah.LittleXavier.Core.Models;
 using Kiarah.LittleXavier.Core.Objects;
-using Kiarah.LittleXavier.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,12 +76,12 @@ namespace Kiarah.LittleXavier.Core.Services
 
         public IEnumerable<BlogEntryViewModel> ToViewModels(IEnumerable<blogEntry> results)
         {
-            var result = results.Select(i => ToViewModels(i));
+            var result = results.Select(i => ToViewModel(i));
 
             return result;
         }
 
-        public BlogEntryViewModel ToViewModels(blogEntry blogEntry)
+        public BlogEntryViewModel ToViewModel(blogEntry blogEntry)
         {
             var blogEntryViewModel = new BlogEntryViewModel();
 

@@ -11,29 +11,29 @@ using System.Web.Http;
 
 namespace Kiarah.LittleXavier.Controllers
 {
-    [RoutePrefix("api/BlogEntries")]
-    public class BlogEntriesController : ApiController
+    [RoutePrefix("api/pagePartEntries")]
+    public class PagePartEntriesController : ApiController
     {
-        private readonly IBlogEntryService _blogEntryService;
+        private readonly IPagePartEntryService _pagePartEntryService;
 
-        public BlogEntriesController()
+        public PagePartEntriesController()
         {
             var container = IoC.Initialize();
 
-            _blogEntryService = container.GetInstance<IBlogEntryService>();
+            _pagePartEntryService = container.GetInstance<IPagePartEntryService>();
         }
 
         // GET: api/cityApi
         public IHttpActionResult Get()
         {
-            var result = _blogEntryService.GetAll();
+            var result = _pagePartEntryService.GetAll();
 
             return Ok(result);
         }
 
         public IHttpActionResult Get(int id)
         {
-            var result = _blogEntryService.Find(id);
+            var result = _pagePartEntryService.Find(id);
 
             return Ok(result);
         }
@@ -43,7 +43,7 @@ namespace Kiarah.LittleXavier.Controllers
         // GET: api/cityApi/5
         public IHttpActionResult Search(SearchCriteria searchCriteria)
         {
-            var result = _blogEntryService.Search(searchCriteria);
+            var result = _pagePartEntryService.Search(searchCriteria);
 
             return Ok(result);
         }
@@ -53,23 +53,23 @@ namespace Kiarah.LittleXavier.Controllers
         // GET: api/cityApi/5
         public IHttpActionResult SearchCount(SearchCriteria searchCriteria)
         {
-            var result = _blogEntryService.SearchCount(searchCriteria);
+            var result = _pagePartEntryService.SearchCount(searchCriteria);
 
             return Ok(result);
         }
 
         // POST: api/cityApi
-        public IHttpActionResult Post(blogEntry blogEntry)
+        public IHttpActionResult Post(pagePartEntry pagePartEntry)
         {
-            _blogEntryService.AddOrUpdate(blogEntry);
+            _pagePartEntryService.AddOrUpdate(pagePartEntry);
 
-            return Ok(blogEntry);
+            return Ok(pagePartEntry);
         }
 
         // DELETE: api/cityApi/5
         public IHttpActionResult Delete(int id)
         {
-            _blogEntryService.Delete(id);
+            _pagePartEntryService.Delete(id);
 
             return Ok();
         }

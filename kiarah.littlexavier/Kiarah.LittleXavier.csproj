@@ -158,6 +158,10 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\StatisticsController.cs" />
+    <Compile Include="Controllers\PagePartEntriesController.cs" />
+    <Compile Include="Controllers\PageEntryController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\BlogEntriesController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />

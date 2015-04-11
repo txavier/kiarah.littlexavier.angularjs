@@ -11,29 +11,29 @@ using System.Web.Http;
 
 namespace Kiarah.LittleXavier.Controllers
 {
-    [RoutePrefix("api/BlogEntries")]
-    public class BlogEntriesController : ApiController
+    [RoutePrefix("api/categories")]
+    public class CategoriesController : ApiController
     {
-        private readonly IBlogEntryService _blogEntryService;
+        private readonly ICategoryService _categoryService;
 
-        public BlogEntriesController()
+        public CategoriesController()
         {
             var container = IoC.Initialize();
 
-            _blogEntryService = container.GetInstance<IBlogEntryService>();
+            _categoryService = container.GetInstance<ICategoryService>();
         }
 
         // GET: api/cityApi
         public IHttpActionResult Get()
         {
-            var result = _blogEntryService.GetAll();
+            var result = _categoryService.GetAll();
 
             return Ok(result);
         }
 
         public IHttpActionResult Get(int id)
         {
-            var result = _blogEntryService.Find(id);
+            var result = _categoryService.Find(id);
 
             return Ok(result);
         }
@@ -43,7 +43,7 @@ namespace Kiarah.LittleXavier.Controllers
         // GET: api/cityApi/5
         public IHttpActionResult Search(SearchCriteria searchCriteria)
         {
-            var result = _blogEntryService.Search(searchCriteria);
+            var result = _categoryService.Search(searchCriteria);
 
             return Ok(result);
         }
@@ -53,23 +53,23 @@ namespace Kiarah.LittleXavier.Controllers
         // GET: api/cityApi/5
         public IHttpActionResult SearchCount(SearchCriteria searchCriteria)
         {
-            var result = _blogEntryService.SearchCount(searchCriteria);
+            var result = _categoryService.SearchCount(searchCriteria);
 
             return Ok(result);
         }
 
         // POST: api/cityApi
-        public IHttpActionResult Post(blogEntry blogEntry)
+        public IHttpActionResult Post(category category)
         {
-            _blogEntryService.AddOrUpdate(blogEntry);
+            _categoryService.AddOrUpdate(category);
 
-            return Ok(blogEntry);
+            return Ok(category);
         }
 
         // DELETE: api/cityApi/5
         public IHttpActionResult Delete(int id)
         {
-            _blogEntryService.Delete(id);
+            _categoryService.Delete(id);
 
             return Ok();
         }

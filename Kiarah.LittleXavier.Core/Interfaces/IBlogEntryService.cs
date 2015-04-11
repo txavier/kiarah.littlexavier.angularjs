@@ -6,5 +6,9 @@ namespace Kiarah.LittleXavier.Core.Interfaces
     {
         System.Collections.Generic.IEnumerable<Kiarah.LittleXavier.Core.Models.blogEntry> Search(Kiarah.LittleXavier.Core.Objects.SearchCriteria searchCriteria);
         int SearchCount(Kiarah.LittleXavier.Core.Objects.SearchCriteria searchCriteria);
+        Kiarah.LittleXavier.Core.Models.blogEntry AddOrUpdate(Kiarah.LittleXavier.Core.Models.blogEntry blogEntry);
+        System.Collections.Generic.IEnumerable<Kiarah.LittleXavier.Core.Models.BlogEntryViewModel> GetAllViewModels();
+        System.Collections.Generic.IEnumerable<Kiarah.LittleXavier.Core.Models.BlogEntryViewModel> ToViewModels(System.Collections.Generic.IEnumerable<Kiarah.LittleXavier.Core.Models.blogEntry> results);
+        Kiarah.LittleXavier.Core.Models.BlogEntryViewModel ToViewModel(Kiarah.LittleXavier.Core.Models.blogEntry blogEntry);
     }
 }

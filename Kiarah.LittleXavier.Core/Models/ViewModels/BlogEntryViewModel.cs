@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
-namespace Kiarah.LittleXavier.Models
+namespace Kiarah.LittleXavier.Core.Models
 {
     public class BlogEntryViewModel
     {

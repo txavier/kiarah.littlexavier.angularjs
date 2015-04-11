@@ -17,5 +17,8 @@ namespace Kiarah.LittleXavier.Core.Models
 
         [Required]
         public string statisticValue { get; set; }
+
+        [Required]
+        public DateTime date { get; set; }
     }
 }
