@@ -10,6 +10,10 @@ using Kiarah.LittleXavier.Data;
 using System.Data.Entity;
 using Kiarah.LittleXavier.Core.Interfaces;
 using Kiarah.LittleXavier.Infrastructure.Data;
+using AutoClutch.Auto.Service.Interfaces;
+using AutoClutch.Auto.Repo.Interfaces;
+using AutoClutch.Auto.Service.Services;
+using AutoClutch.Auto.Repo.Objects;
 
 namespace Kiarah.LittleXavier.CompositionRoot
 {
@@ -27,13 +31,13 @@ namespace Kiarah.LittleXavier.CompositionRoot
 
             For<DbContext>().HybridHttpOrThreadLocalScoped().Use<AuthContext>().Named("KiarahLittleXavierAuth");
 
-            //For<DbContext>().HybridHttpOrThreadLocalScoped().Use<StuffFinder.Data.stuffFinderDbContext>();
+            For<DbContext>().HybridHttpOrThreadLocalScoped().Use<littleXavierDbContext>();
 
             For<IAuthRepository>().Use<AuthRepository>();
 
-            //For(typeof(IService<>)).Use(typeof(Service<>));
+            For(typeof(IService<>)).Use(typeof(Service<>));
 
-            //For(typeof(IRepository<>)).Use(typeof(Repository<>));
+            For(typeof(IRepository<>)).Use(typeof(Repository<>));
 
             //For(typeof(IRepository<StuffFinder.Core.Models.AspNetUser>)).Use(typeof(Repository<AspNetUser>)).Ctor<DbContext>("context").IsNamedInstance("stuffFinderAuth");
 

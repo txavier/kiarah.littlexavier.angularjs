@@ -1,4 +1,5 @@
-﻿///
+/// <vs BeforeBuild='default' />
+///
 // include plug-ins
 var gulp = require('gulp');
 var concat = require('gulp-concat');
@@ -32,8 +33,10 @@ var config = {
     //Angular
     angularsrc: [
         'bower_components/angular/angular.min.js',
-        'Scripts/angular-local-storage.min.js',
-        'bower_components/angular-loading-bar/loading-bar.min.js'
+        'bower_components/angular-resource/angular-resource.min.js',
+        'bower_components/angular-route/angular-route.min.js',
+        'bower_components/angular-local-storage/dist/angular-local-storage.min.js',
+        'bower_components/angular-loading-bar/build/loading-bar.min.js'
     ],
     angularbundle: 'Scripts/angular-bundle.min.js',
 
