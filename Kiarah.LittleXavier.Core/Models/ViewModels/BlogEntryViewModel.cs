@@ -13,7 +13,6 @@ namespace Kiarah.LittleXavier.Core.Models
 
         public int categoryId { get; set; }
 
-        [Required]
         [StringLength(256)]
         public string messageTitle { get; set; }
 

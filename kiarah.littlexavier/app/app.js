@@ -5,9 +5,9 @@ angular
         'LocalStorageModule',
         'angular-loading-bar',
         'ngResource',
+        'textAngular'
         //'ui.bootstrap',
         //'ngDroplet',
-        //'textAngular',
         //'shared.directives',
         //'ngToast',
         //'nya.bootstrap.select',
@@ -19,12 +19,34 @@ angular
 
 function config($routeProvider, $locationProvider) {
     $routeProvider
-        .when('/index', {
-            templateUrl: 'index.html',
-            controller: 'indexController',
+        .when('/home', {
+            templateUrl: '/app/templates/home.html',
+            controller: 'homeController',
             controllerAs: 'vm'
         })
-        .otherwise({ redirectTo: '/' });
+        .when('/add-or-update-blog-entry', {
+            templateUrl: '/app/templates/add-or-update-blog-entry.html',
+            controller: 'addOrUpdateBlogEntryController',
+            controllerAs: 'vm'
+        })
+        .when('/login', {
+            controller: 'loginController',
+            templateUrl: '/app/templates/login.html'
+        })
+        .when('/signup', {
+            controller: 'signupController',
+            templateUrl: '/app/templates/signup.html'
+        })
+        .when("/auth-home", {
+            controller: 'authHomeController',
+            templateUrl: '/app/templates/auth-home.html'
+        })
+        .otherwise({ redirectTo: '/home' });
+
+    $locationProvider.html5Mode({
+        enabled: false,
+        requireBase: false
+    });
 }
 
 // Add an escape filter to encode strings for use in url's.
@@ -32,4 +54,16 @@ angular
     .module('app')
     .filter('escape', function () {
         return window.encodeURIComponent;
+    });
+
+angular
+    .module('app')
+    .run(['authService', function (authService) {
+        authService.fillAuthData();
+    }]);
+
+angular
+    .module('app')
+    .config(function ($httpProvider) {
+        $httpProvider.interceptors.push('authInterceptorService');
 });

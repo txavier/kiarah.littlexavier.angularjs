@@ -24,6 +24,8 @@
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Glass+Antiqua' rel='stylesheet' type='text/css'>
 
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="/js/html5shiv.js"></script>
@@ -38,10 +40,10 @@
     <script src="/Scripts/jquery-bundle.min.js"></script>
     <script src="/Scripts/bootstrap-bundle.min.js"></script>
     <script src="/Scripts/modernizer-min.js"></script>
-    <script src="Scripts/angular-bundle.min.js"></script>
+    <script src="/Scripts/angular-bundle.min.js"></script>
     <!-- Extras -->
 </head>
-<body id="page" data-ng-controller="indexController">
+<body id="page" data-ng-controller="indexController as vm">
 
     <div class="container">
         <div class="row clearfix">
@@ -55,7 +57,7 @@
             <div class="col-md-12 column">
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">K</a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#/home">K</a>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
@@ -99,6 +101,9 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li>
+                                <a data-ng-click="vm.logout()">Logout</a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -141,77 +146,72 @@
                             Kiarah is a gift to us and we want to share this gift with others.  We hope that this website will help everyone near and far to enjoy the moments we enjoy every day.
                         </p>
                         <h2>Kiarah's Stats</h2>
-                        <p>Today Kiarah is 30 weeks old.</p>
+                        <p>Today Kiarah is {{ vm.ageInWeeks }} weeks old.</p>
                         <hr />
-                        <p>On the last doctor's visit Kiarah was 23 lbs 1 ounce.</p>
-                        <p>She was also measured to be 23 cm tall.</p>
+                        <p>On the last doctor's visit Kiarah was {{ vm.weightDisplay }}.</p>
+                        <p>She was also measured to be {{ vm.heightDisplay }} tall.</p>
                     </div>
                     <div class="col-md-6 column">
-                        <p>
-
-                        <p>
-
-                            <ul class="pagination"><li class="page_first"><span>First</span></li><li class="page_prev"><span>&laquo;</span></li><li class="page_item page_current"><span>1</span></li><li class="page_next"><span>&raquo;</span></li><li class="page_last"><span>Last</span></li></ul>        <div class="postList">
-                                <div class="post">
-                                    <h3><a href="/posts/2014/november/first/">First!</a></h3>
-                        <p>I am the proud father of a new blog... er um proud father of a new baby that now has a blog.</p>                        By <a href="?author=Theo Xavier">Theo Xavier</a> at 23 Nov 2014
+                        <div data-ng-view="">
+                        </div>
                     </div>
-                    <div class="post">
-                        <h3><a href="/posts/2014/july/test/">Test</a></h3>
-                        By <a href="?author=Luke">Luke</a> at 22 Jul 2014
+                    <div class="col-md-3 column">
+                        <p>
+                            <input type="text" id="smartSearchInput" value="Search" />
+                            <input type="button" id="smartSearchButton" value="Go" />
+                        </p>
+                        <p>
+                            <span class="smartSubTitle">Tags</span><br />
+                            <div class="smartRightLowSectionContainer">
+                                <a class="smartTag tag-1" href="/?tag=other">
+                                    other
+                                </a><span style="color: #666;">&nbsp;&#40;1&#41;</span><br />
+                            </div>
+                        </p>
+                        <p>
+                            <span class="smartSubTitle smartTopBorder">Latest Comments</span><br />
+                            <div data-ng-repeat="post in vm.blogEntries">
+                                <a href="/posts/{{ post.year }}/{{ post.month }}/{{ post.messageTitle | escape }}">
+                                    By {{ post.userName }}
+                                    at {{ post.date }}
+                                </a>
+                                <br /> <br />
+                            </div>
+                            <!--<a href="/posts/2014/november/first/">
+                                By Theo
+                                at 24 Nov 2014, 00:44 AM
+                            </a>
+                            <br /><br />
+                            <a href="/posts/2014/november/first/">
+                                By Theo Xavier
+                                at 24 Nov 2014, 00:44 AM
+                            </a>
+                            <br /><br />
+                            <a href="/posts/2014/november/first/">
+                                By Theo Xavier
+                                at 24 Nov 2014, 00:44 AM
+                            </a>
+                            <br /><br />
+                            <a href="/posts/2014/november/first/">
+                                By Theo
+                                at 24 Nov 2014, 00:47 AM
+                            </a>-->
+                            <!--<br /><br />-->
+                        </p>
+                        <p>
+                            <span class="smartSubTitle smartTopBorder">Authors</span><br />
+                            <a href="/?author=Kimberly Xavier">Kimberly Xavier</a><br />
+                        </p>
+                        <p>
+                            <span class="smartSubTitle smartTopBorder">Categories</span><br />
+                            <div data-ng-repeat="category in vm.categories">
+                                <a class="smartCategory" href="/category/{{ category.name }}">{{ category.name }}</a><br />
+                            </div>
+                            <!--<a class="smartCategory" href="/?category=Person">Person</a><br />
+                            <a class="smartCategory" href="/?category=News">News</a><br />-->
+                        </p>
                     </div>
                 </div>
-                <ul class="pagination"><li class="page_first"><span>First</span></li><li class="page_prev"><span>&laquo;</span></li><li class="page_item page_current"><span>1</span></li><li class="page_next"><span>&raquo;</span></li><li class="page_last"><span>Last</span></li></ul>
-                </p>
-                </p>
-            </div>
-            <div class="col-md-3 column">
-                <p>
-                    <form id="smartBlogSearchForm">
-                        <input type="text" id="smartSearchInput" value="Search" />
-                        <input type="button" id="smartSearchButton" value="Go" />
-                    </form>
-                </p>
-                <p>
-                    <span class="smartSubTitle">Tags</span><br />
-                    <div class="smartRightLowSectionContainer">
-                        <a class="smartTag tag-1" href="/?tag=other">
-                            other
-                        </a><span style="color: #666;">&nbsp;&#40;1&#41;</span><br />
-                    </div>
-                </p>
-                <p>
-                    <span class="smartSubTitle smartTopBorder">Latest Comments</span><br />
-                    <a href="/posts/2014/november/first/">
-                        By Theo
-                        at 24 Nov 2014, 00:44 AM
-                    </a>
-                    <br /><br />
-                    <a href="/posts/2014/november/first/">
-                        By Theo Xavier
-                        at 24 Nov 2014, 00:44 AM
-                    </a>
-                    <br /><br />
-                    <a href="/posts/2014/november/first/">
-                        By Theo Xavier
-                        at 24 Nov 2014, 00:44 AM
-                    </a>
-                    <br /><br />
-                    <a href="/posts/2014/november/first/">
-                        By Theo
-                        at 24 Nov 2014, 00:47 AM
-                    </a>
-                    <br /><br />
-                </p>
-                <p>
-                    <span class="smartSubTitle smartTopBorder">Authors</span><br />
-                    <a href="/?author=Kimberly Xavier">Kimberly Xavier</a><br />
-                </p>
-                <p>
-                    <span class="smartSubTitle smartTopBorder">Categories</span><br />
-                    <a class="smartCategory" href="/?category=Person">Person</a><br />
-                    <a class="smartCategory" href="/?category=News">News</a><br />
-                </p>
             </div>
         </div>
     </div>
@@ -221,7 +221,14 @@
     <script src="app/app.js"></script>
     <!-- Services -->
     <script src="app/services/dataService.js"></script>
+    <script src="app/services/authService.js"></script>
+    <script src="app/services/authInterceptorService.js"></script>
     <!-- Controllers -->
     <script src="app/index/indexController.js"></script>
+    <script src="app/home/homeController.js"></script>
+    <script src="app/blogEntry/addOrUpdateBlogEntryController.js"></script>
+    <script src="app/authHome/authHomeController.js"></script>
+    <script src="app/signup/signupController.js"></script>
+    <script src="app/login/loginController.js"></script>
 </body>
 </html>

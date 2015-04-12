@@ -65,25 +65,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ViewModels\BlogEntryCommentViewModel.cs" />
+    <Compile Include="Interfaces\IBlogEntryCommentService.cs" />
     <Compile Include="Interfaces\IStatisticService.cs" />
     <Compile Include="Interfaces\IPagePartEntryService.cs" />
     <Compile Include="Interfaces\IPageEntryService.cs" />
+    <Compile Include="Models\littleXavier\blogEntryComment.cs" />
     <Compile Include="Models\ViewModels\StatisticViewModel.cs" />
     <Compile Include="Models\ViewModels\CategoryViewModel.cs" />
     <Compile Include="Interfaces\IAuthRepository.cs" />
     <Compile Include="Interfaces\ICategoryService.cs" />
-    <Compile Include="Models\blogEntry.cs" />
-    <Compile Include="Models\category.cs" />
-    <Compile Include="Models\pageEntry.cs" />
-    <Compile Include="Models\pagePartEntry.cs" />
-    <Compile Include="Models\statistic.cs" />
-    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\littleXavier\blogEntry.cs" />
+    <Compile Include="Models\littleXavier\category.cs" />
+    <Compile Include="Models\littleXavier\pageEntry.cs" />
+    <Compile Include="Models\littleXavier\pagePartEntry.cs" />
+    <Compile Include="Models\littleXavier\statistic.cs" />
+    <Compile Include="Models\Auth\UserModel.cs" />
     <Compile Include="Models\ViewModels\PagePartEntryViewModel.cs" />
     <Compile Include="Objects\SearchCriteria.cs" />
     <Compile Include="Objects\SearchParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Interfaces\IAuthService.cs" />
+    <Compile Include="Services\BlogEntryCommentService.cs" />
     <Compile Include="Services\StatisticService.cs" />
     <Compile Include="Services\PagePartEntryService.cs" />
     <Compile Include="Services\PageEntryService.cs" />

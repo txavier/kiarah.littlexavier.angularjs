@@ -66,6 +66,14 @@
     <Compile Include="Migrations\201504112151533_AddDateToStatistic.Designer.cs">
       <DependentUpon>201504112151533_AddDateToStatistic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504112357047_AddCommentsTable.cs" />
+    <Compile Include="Migrations\201504112357047_AddCommentsTable.Designer.cs">
+      <DependentUpon>201504112357047_AddCommentsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504120142377_RemoveRequiredAttributeFromBlogEntryTitle.cs" />
+    <Compile Include="Migrations\201504120142377_RemoveRequiredAttributeFromBlogEntryTitle.Designer.cs">
+      <DependentUpon>201504120142377_RemoveRequiredAttributeFromBlogEntryTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,6 +93,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504112151533_AddDateToStatistic.resx">
       <DependentUpon>201504112151533_AddDateToStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504112357047_AddCommentsTable.resx">
+      <DependentUpon>201504112357047_AddCommentsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504120142377_RemoveRequiredAttributeFromBlogEntryTitle.resx">
+      <DependentUpon>201504120142377_RemoveRequiredAttributeFromBlogEntryTitle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

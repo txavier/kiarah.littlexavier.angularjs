@@ -19,6 +19,11 @@ namespace Kiarah.LittleXavier
             HttpConfiguration config = new HttpConfiguration();
             WebApiConfig.Register(config);
             app.UseWebApi(config);
+
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
+            // Remove the xml formatter we are going full json.
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
         }
 
         public void ConfigureOAuth(IAppBuilder app)

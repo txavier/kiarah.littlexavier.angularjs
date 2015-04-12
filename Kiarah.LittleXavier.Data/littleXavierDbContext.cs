@@ -14,6 +14,7 @@ namespace Kiarah.LittleXavier.Data
         }
 
         public virtual DbSet<blogEntry> blogEntries { get; set; }
+        public virtual DbSet<blogEntryComment> blogEntryComments { get; set; }
         public virtual DbSet<category> categories { get; set; }
         public virtual DbSet<pageEntry> pageEntries { get; set; }
         public virtual DbSet<pagePartEntry> pagePartEntries { get; set; }
@@ -24,6 +25,11 @@ namespace Kiarah.LittleXavier.Data
             modelBuilder.Entity<blogEntry>()
                 .Property(e => e.userName)
                 .IsFixedLength();
+
+            modelBuilder.Entity<blogEntry>()
+                .HasMany(e => e.blogEntryComments)
+                .WithRequired(e => e.blogEntry)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<category>()
                 .HasMany(e => e.blogEntries)

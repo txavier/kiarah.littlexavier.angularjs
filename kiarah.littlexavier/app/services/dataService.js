@@ -5,16 +5,9 @@
         .module('app')
         .factory('dataService', dataService);
 
-    dataService.$inject = ['$http', '$log', '$resource', '$q'];
+    dataService.$inject = ['$http', '$log'];
 
-    function dataService($http, $log, $resource, $q) {
-        var deferred = $q.defer();
-
-        var serverUrl = {
-            resourceServerUrl: '',
-            authenticationServerUrl: ''
-        };
-
+    function dataService($http, $log) {
         var apiUrl = 'api/';
 
         var service = {

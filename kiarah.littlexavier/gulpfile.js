@@ -36,7 +36,10 @@ var config = {
         'bower_components/angular-resource/angular-resource.min.js',
         'bower_components/angular-route/angular-route.min.js',
         'bower_components/angular-local-storage/dist/angular-local-storage.min.js',
-        'bower_components/angular-loading-bar/build/loading-bar.min.js'
+        'bower_components/angular-loading-bar/build/loading-bar.min.js',
+        'bower_components/textAngular/dist/textAngular-rangy.min.js',
+        'bower_components/textAngular/dist/textAngular-sanitize.min.js',
+        'bower_components/textAngular/dist/textAngular.min.js'
     ],
     angularbundle: 'Scripts/angular-bundle.min.js',
 
@@ -49,6 +52,14 @@ var config = {
 
     // Angular-Loading-Bar CSS
     angularloadingbarcss: 'bower_components/angular-loading-bar/loading-bar.min.css',
+
+    // TextAngular CSS
+    textangularcss: 'bower_components/textAngular/src/textAngular.css',
+
+    // Font Awesome CSS
+    fontawesomecss: 'bower_components/font-awesome/css/font-awesome.min.css',
+    fontawesomefonts: 'bower_components/font-awesome/fonts/*.*',
+
 
     stylecss: 'Content/style.css',
     appcss: 'Content/Site.css',
@@ -112,7 +123,14 @@ gulp.task('clean-styles', function (cb) {
 });
 
 gulp.task('css', ['clean-styles', 'bower-restore'], function () {
-    return gulp.src([config.stylecss, config.bootstrapcss, config.appcss, config.smartblogcss, config.angularloadingbarcss])
+    return gulp.src([config.stylecss,
+        config.bootstrapcss,
+        config.appcss,
+        config.smartblogcss,
+        config.angularloadingbarcss,
+        config.textangularcss,
+        config.fontawesomecss
+    ])
      .pipe(concat('app.css'))
      .pipe(gulp.dest(config.cssout))
      .pipe(minifyCSS())
@@ -122,7 +140,10 @@ gulp.task('css', ['clean-styles', 'bower-restore'], function () {
 
 gulp.task('fonts', ['clean-styles', 'bower-restore'], function () {
     return
-    gulp.src(config.boostrapfonts)
+    gulp.src([
+        config.boostrapfonts,
+        config.fontawesomefonts
+    ])
         .pipe(gulp.dest(config.fontsout));
 });
 

@@ -25,7 +25,7 @@ namespace Kiarah.LittleXavier.Core.Services
             var result = searchCriteria == null ?
                Get()
                : Get(
-               filter: i => searchCriteria.searchText == null ? true 
+               filter: i => searchCriteria.searchText == null ? true
                    : i.messageBody.Contains(searchCriteria.searchText) || searchCriteria.searchText.Contains(i.messageBody)
                    || i.messageTitle.Contains(searchCriteria.searchText) || searchCriteria.searchText.Contains(i.messageTitle),
                orderBy: j => searchCriteria.orderBy == "messageTitle" ? j.OrderBy(k => k.messageTitle) : j.OrderBy(k => k.date),
@@ -48,7 +48,7 @@ namespace Kiarah.LittleXavier.Core.Services
             return result;
         }
 
-        public blogEntry AddOrUpdate(blogEntry blogEntry)
+        public blogEntry AddOrUpdate(blogEntry blogEntry, string loggedInUserName)
         {
             // If this is an update then dont update the related entities
             // too.
@@ -59,8 +59,18 @@ namespace Kiarah.LittleXavier.Core.Services
 
                 blogEntry.category = null;
             }
+            else
+            {
+                // If we are saving for the first time then...
+                blogEntry.userName = loggedInUserName;
+
+                blogEntry.date = DateTime.Now;
+
+                blogEntry.categoryId = 2;
+            }
 
             blogEntry = base.AddOrUpdate(blogEntry);
+
 
             return blogEntry;
         }

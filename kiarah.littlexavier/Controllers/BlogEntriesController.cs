@@ -23,6 +23,7 @@ namespace Kiarah.LittleXavier.Controllers
             _blogEntryService = container.GetInstance<IBlogEntryService>();
         }
 
+        [Route("")]
         // GET: api/cityApi
         public IHttpActionResult Get()
         {
@@ -58,10 +59,13 @@ namespace Kiarah.LittleXavier.Controllers
             return Ok(result);
         }
 
+        [Authorize]
+        [HttpPost]
+        [Route("")]
         // POST: api/cityApi
         public IHttpActionResult Post(blogEntry blogEntry)
         {
-            _blogEntryService.AddOrUpdate(blogEntry);
+            _blogEntryService.AddOrUpdate(blogEntry, User.Identity.Name);
 
             return Ok(blogEntry);
         }
