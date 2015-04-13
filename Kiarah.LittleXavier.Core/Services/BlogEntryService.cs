@@ -25,13 +25,18 @@ namespace Kiarah.LittleXavier.Core.Services
             var result = searchCriteria == null ?
                Get()
                : Get(
-               filter: i => searchCriteria.searchText == null ? true
+               filter: i => searchCriteria.searchText == null ? 
+                   ((searchCriteria.blogEntryTitle != null ? i.messageTitle == searchCriteria.blogEntryTitle : true)
+                   && (searchCriteria.year.HasValue && searchCriteria.month.HasValue ? 
+                        i.date.Year == searchCriteria.year && i.date.Month == searchCriteria.month : true)
+                   && (searchCriteria.year != null ? i.date.Year == searchCriteria.year : true)
+                   && (searchCriteria.month != null ? i.date.Month == searchCriteria.month : true))
                    : i.messageBody.Contains(searchCriteria.searchText) || searchCriteria.searchText.Contains(i.messageBody)
                    || i.messageTitle.Contains(searchCriteria.searchText) || searchCriteria.searchText.Contains(i.messageTitle),
                orderBy: j => searchCriteria.orderBy == "messageTitle" ? j.OrderBy(k => k.messageTitle) : j.OrderBy(k => k.date),
                skip: ((searchCriteria.currentPage - 1) ?? 1) * (searchCriteria.itemsPerPage ?? int.MaxValue),
                take: (searchCriteria.itemsPerPage ?? int.MaxValue),
-               includeProperties: "category");
+               includeProperties: searchCriteria.includeProperties);
 
             return result;
         }
@@ -48,12 +53,20 @@ namespace Kiarah.LittleXavier.Core.Services
             return result;
         }
 
-        public blogEntry AddOrUpdate(blogEntry blogEntry, string loggedInUserName)
+        public blogEntry AddOrUpdate(blogEntry blogEntry, string loggedInUsername)
         {
             // If this is an update then dont update the related entities
             // too.
             if (blogEntry.blogEntryId != 0)
             {
+                // If the blog entry is not new and the user name of the person making the update to 
+                // this blog entry is not the same as the original blog entryer then do not continue
+                // with the update.
+                if (blogEntry.userName != loggedInUsername)
+                {
+                    return blogEntry;
+                }
+
                 blogEntry.categoryId = blogEntry.categoryId == 0 && blogEntry.category != null ?
                     blogEntry.category.categoryId : blogEntry.categoryId;
 
@@ -62,7 +75,7 @@ namespace Kiarah.LittleXavier.Core.Services
             else
             {
                 // If we are saving for the first time then...
-                blogEntry.userName = loggedInUserName;
+                blogEntry.userName = loggedInUsername;
 
                 blogEntry.date = DateTime.Now;
 

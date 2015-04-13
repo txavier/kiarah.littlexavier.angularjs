@@ -1,0 +1,27 @@
+﻿<ul class="pagination"><li class="page_first"><span>First</span></li><li class="page_prev"><span>&laquo;</span></li><li class="page_item page_current"><span>1</span></li><li class="page_next"><span>&raquo;</span></li><li class="page_last"><span>Last</span></li></ul>
+<p><a class="btn btn-blog-entry" href="#/add-or-update-blog-entry">Add</a></p>
+<div class="postList">
+    <div class="post" data-ng-repeat="blogEntry in vm.blogEntries">
+        <a class="btn btn-blog-entry" href="#/add-or-update-blog-entry">Update</a>
+        <a class="btn btn-blog-entry" data-ng-click="vm.delete(blogEntry.blogEntryId)">Delete</a>
+        <h3><a href="#/posts/{{ blogEntry.date | date : 'yyyy' }}/{{ blogEntry.date | date :'M' }}/{{ blogEntry.messageTitle | escape }}">{{ blogEntry.messageTitle }}</a></h3>
+        <div ta-bind ng-model="blogEntry.messageBody"></div>
+        <p>By <a href="/profile/{{ blogEntry.userName }}">{{ blogEntry.userName }}</a> at {{ blogEntry.date | date : format : shortDate }}</p>
+        <a class="btn btn-blog-entry" href="#/add-or-update-blog-entry-comment/{{ blogEntry.blogEntryId }}">Add Comment</a>
+        <h3>Comments</h3>
+        <div class="comment" style="height:100px" data-ng-repeat="blogEntryComment in blogEntry.blogEntryComments">
+            <div class="commentInner">
+                <div class="commentName">
+                    {{ blogEntryComment.userName }}
+                </div>
+                <div class="commentComment">
+                    <div ta-bind ng-model="blogEntryComment.comment"></div>
+                </div>
+                <div class="commentDate">
+                    {{ blogEntryComment.dateModified | date:'short'}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ul class="pagination"><li class="page_first"><span>First</span></li><li class="page_prev"><span>&laquo;</span></li><li class="page_item page_current"><span>1</span></li><li class="page_next"><span>&raquo;</span></li><li class="page_last"><span>Last</span></li></ul>

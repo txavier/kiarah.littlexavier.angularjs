@@ -23,5 +23,11 @@ namespace Kiarah.LittleXavier.Core.Objects
         public DateTime? startDateTime { get; set; }
 
         public DateTime? endDateTime { get; set; }
+
+        public string blogEntryTitle { get; set; }
+
+        public int? year { get; set; }
+
+        public int? month { get; set; }
     }
 }

@@ -61,7 +61,7 @@ namespace Kiarah.LittleXavier.Controllers
         // POST: api/cityApi
         public IHttpActionResult Post(blogEntryComment blogEntryComment)
         {
-            _blogEntryCommentService.AddOrUpdate(blogEntryComment);
+            _blogEntryCommentService.AddOrUpdate(blogEntryComment, User.Identity.Name);
 
             return Ok(blogEntryComment);
         }

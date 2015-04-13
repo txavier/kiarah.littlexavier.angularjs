@@ -45,8 +45,36 @@ namespace Kiarah.LittleXavier.Core.Services
             return result;
         }
 
-        public blogEntryComment AddOrUpdate(blogEntryComment blogEntryComment)
+        public blogEntryComment AddOrUpdate(blogEntryComment blogEntryComment, string loggedInUsername)
         {
+            if (blogEntryComment.blogEntryCommentId != 0)
+            {
+                // If the comment is not new and the user name of the person making the update to 
+                // this comment is not the same as the original commenter then do not continue
+                // with the update.
+                if (blogEntryComment.blogEntryCommentId != 0 && blogEntryComment.userName != loggedInUsername)
+                {
+                    return blogEntryComment;
+                }
+
+                blogEntryComment.blogEntryId = blogEntryComment.blogEntryId == 0 && blogEntryComment.blogEntry != null ?
+                    blogEntryComment.blogEntry.blogEntryId : blogEntryComment.blogEntryId;
+
+                blogEntryComment.blogEntry = null;
+
+                blogEntryComment.dateModified = DateTime.Now;
+            }
+            else
+            {
+                blogEntryComment.dateCreated = DateTime.Now;
+                
+                blogEntryComment.dateModified = DateTime.Now;
+            }
+
+            
+
+            blogEntryComment.userName = loggedInUsername;
+
             blogEntryComment = base.AddOrUpdate(blogEntryComment);
 
             return blogEntryComment;

@@ -157,3 +157,4 @@ $RECYCLE.BIN/
 .DS_Store
 /kiarah.littlexavier/bower_components
 /kiarah.littlexavier/node_modules
+*.pubxml

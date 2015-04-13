@@ -29,6 +29,16 @@ function config($routeProvider, $locationProvider) {
             controller: 'addOrUpdateBlogEntryController',
             controllerAs: 'vm'
         })
+        .when('/posts/:year/:month/:blogEntryTitle', {
+            templateUrl: '/app/templates/blog-entries.html',
+            controller: 'blogEntriesController',
+            controllerAs: 'vm'
+        })
+        .when('/add-or-update-blog-entry-comment/:blogEntryId', {
+            templateUrl: '/app/templates/add-or-update-blog-entry-comment.html',
+            controller: 'addOrUpdateBlogEntryCommentController',
+            controllerAs: 'vm'
+        })
         .when('/login', {
             controller: 'loginController',
             templateUrl: '/app/templates/login.html'

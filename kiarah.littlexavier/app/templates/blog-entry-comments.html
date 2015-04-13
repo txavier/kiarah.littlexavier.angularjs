@@ -1,13 +1,13 @@
 ﻿<ul class="pagination"><li class="page_first"><span>First</span></li><li class="page_prev"><span>&laquo;</span></li><li class="page_item page_current"><span>1</span></li><li class="page_next"><span>&raquo;</span></li><li class="page_last"><span>Last</span></li></ul>
 <p><a class="btn btn-blog-entry" href="#/add-or-update-blog-entry">Add</a></p>
 <div class="postList">
-    <div class="post" data-ng-repeat="post in vm.blogEntries">
+    <div class="post" data-ng-repeat="post in vm.blogEntryComments">
         <h3><a href="#/posts/{{ post.date | date : 'yyyy' }}/{{ post.date | date :'M' }}/{{ post.messageTitle | escape }}">{{ post.messageTitle }}</a></h3>
         <div ta-bind ng-model="post.messageBody"></div>
         <p>By <a href="/profile/{{ post.userName }}">{{ post.userName }}</a> at {{ post.date | date : format : shortDate }}</p>
         <a class="btn btn-blog-entry" href="#/add-or-update-blog-entry">Update</a>
-        <a class="btn btn-blog-entry" data-ng-click="vm.delete(post.blogEntryId)">Delete</a>
-        <a class="btn btn-blog-entry" href="#/add-or-update-blog-entry-comment/{{ post.blogEntryId }}">Add Comment</a>
+        <a class="btn btn-blog-entry" data-ng-click="vm.delete(post.blogEntryCommentId)">Delete</a>
+        <a class="btn btn-blog-entry" href="#/add-or-update-blog-entry-comment">Add Comment</a>
     </div>
 </div>
 <ul class="pagination"><li class="page_first"><span>First</span></li><li class="page_prev"><span>&laquo;</span></li><li class="page_item page_current"><span>1</span></li><li class="page_next"><span>&raquo;</span></li><li class="page_last"><span>Last</span></li></ul>

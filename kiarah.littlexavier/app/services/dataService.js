@@ -52,7 +52,7 @@
 
         function searchEntityCount(entityDataStore, searchCriteria) {
             return $http.post(apiUrl + entityDataStore + '/search/count', searchCriteria)
-                            .then(searchCount)
+                            .then(searchCountComplete)
                             .catch(searchCountFailed);
 
             function searchCountComplete(response) {

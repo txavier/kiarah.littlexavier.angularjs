@@ -62,7 +62,7 @@ var config = {
 
 
     stylecss: 'Content/style.css',
-    appcss: 'Content/Site.css',
+    appcss: 'Content/site.css',
     fontsout: 'Content/dist/fonts',
     cssout: 'Content/dist/css'
 

@@ -102,7 +102,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a data-ng-click="vm.logout()">Logout</a>
+                                <a data-ng-click="vm.authentication.loginlogout()">{{ vm.authentication.sidebarAuthenticationLabel }}</a>
                             </li>
                         </ul>
                     </div>
@@ -230,5 +230,8 @@
     <script src="app/authHome/authHomeController.js"></script>
     <script src="app/signup/signupController.js"></script>
     <script src="app/login/loginController.js"></script>
+    <script src="app/blogEntry/blogEntriesController.js"></script>
+    <script src="app/blogEntryComments/addOrUpdateBlogEntryCommentController.js"></script>
+    <script src="app/blogEntryComments/blogEntryCommentsController.js"></script>
 </body>
 </html>

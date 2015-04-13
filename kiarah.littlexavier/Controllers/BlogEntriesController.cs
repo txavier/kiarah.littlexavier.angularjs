@@ -39,6 +39,20 @@ namespace Kiarah.LittleXavier.Controllers
             return Ok(result);
         }
 
+        [Route("{year}/{month}/{blogEntryName}")]
+        [HttpGet]
+        public IHttpActionResult Get(int year, int month, string blogEntryName)
+        {
+            var blogEntry = _blogEntryService.Get(filter: i =>
+                i.date.Year == year
+                && i.date.Month == month
+                && i.messageTitle == blogEntryName
+                ).
+                FirstOrDefault();
+
+            return Ok(blogEntry);
+        }
+
         [Route("search")]
         [HttpPost]
         // GET: api/cityApi/5
