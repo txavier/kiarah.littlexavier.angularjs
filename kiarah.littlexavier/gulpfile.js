@@ -39,7 +39,22 @@ var config = {
         'bower_components/angular-loading-bar/build/loading-bar.min.js',
         'bower_components/textAngular/dist/textAngular-rangy.min.js',
         'bower_components/textAngular/dist/textAngular-sanitize.min.js',
-        'bower_components/textAngular/dist/textAngular.min.js'
+        'bower_components/textAngular/dist/textAngular.min.js',
+        'app/app.js',
+        'app/services/dataService.js',
+        'app/services/authService.js',
+        'app/services/authInterceptorService.js',
+        'app/index/indexController.js',
+        'app/home/homeController.js',
+        'app/blogEntry/addOrUpdateBlogEntryController.js',
+        'app/authHome/authHomeController.js',
+        'app/signup/signupController.js',
+        'app/login/loginController.js',
+        'app/blogEntry/blogEntriesController.js',
+        'app/blogEntryComments/addOrUpdateBlogEntryCommentController.js',
+        'app/blogEntryComments/blogEntryCommentsController.js',
+        'app/statistics/addOrUpdateStatisticController.js',
+        'app/statistics/statisticsController.js'
     ],
     angularbundle: 'Scripts/angular-bundle.min.js',
 
@@ -79,7 +94,9 @@ gulp.task('clean-vendor-scripts', function (cb) {
 //Create a jquery bundled file
 gulp.task('jquery-bundle', ['clean-vendor-scripts', 'bower-restore'], function () {
     return gulp.src(config.jquerysrc)
+     .pipe(sourcemaps.init())
      .pipe(concat('jquery-bundle.min.js'))
+     .pipe(sourcemaps.write('maps'))
      .pipe(gulp.dest('Scripts'));
 });
 

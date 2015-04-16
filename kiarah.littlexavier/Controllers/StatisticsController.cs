@@ -2,6 +2,7 @@
 using Kiarah.LittleXavier.Core.Models;
 using Kiarah.LittleXavier.Core.Objects;
 using Kiarah.LittleXavier.DependencyResolution;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,14 @@ namespace Kiarah.LittleXavier.Controllers
         public IHttpActionResult Get(int id)
         {
             var result = _statisticService.Find(id);
+
+            return Ok(result);
+        }
+
+        [Route("{key}")]
+        public IHttpActionResult Get(string key)
+        {
+            var result = _statisticService.Get(filter: i => i.statisticKey == key);
 
             return Ok(result);
         }

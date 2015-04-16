@@ -146,7 +146,8 @@
                             Kiarah is a gift to us and we want to share this gift with others.  We hope that this website will help everyone near and far to enjoy the moments we enjoy every day.
                         </p>
                         <h2>Kiarah's Stats</h2>
-                        <p>Today Kiarah is {{ vm.ageInWeeks }} weeks old.</p>
+                        <p>Today Kiarah is {{ vm.ageStatistic.value }} {{ vm.ageStatistic.unit }} old.</p>
+                        <a class="btn btn-blog-entry" href="#/add-or-update-statistic/age">Update</a>
                         <hr />
                         <p>On the last doctor's visit Kiarah was {{ vm.weightDisplay }}.</p>
                         <p>She was also measured to be {{ vm.heightDisplay }} tall.</p>
@@ -218,14 +219,14 @@
     <!-- Deffered scripts -->
     <!-- Angular -->
     <!-- App -->
-    <script src="app/app.js"></script>
+    <!--<script src="app/app.js"></script>-->
     <!-- Services -->
-    <script src="app/services/dataService.js"></script>
+    <!--<script src="app/services/dataService.js"></script>
     <script src="app/services/authService.js"></script>
-    <script src="app/services/authInterceptorService.js"></script>
+    <script src="app/services/authInterceptorService.js"></script>-->
     <!-- Controllers -->
-    <script src="app/index/indexController.js"></script>
-    <script src="app/home/homeController.js"></script>
+    <!--<script src="app/index/indexController.js"></script>-->
+    <!--<script src="app/home/homeController.js"></script>
     <script src="app/blogEntry/addOrUpdateBlogEntryController.js"></script>
     <script src="app/authHome/authHomeController.js"></script>
     <script src="app/signup/signupController.js"></script>
@@ -233,5 +234,7 @@
     <script src="app/blogEntry/blogEntriesController.js"></script>
     <script src="app/blogEntryComments/addOrUpdateBlogEntryCommentController.js"></script>
     <script src="app/blogEntryComments/blogEntryCommentsController.js"></script>
+    <script src="app/statistics/addOrUpdateStatisticEntryController.js"></script>
+    <script src="app/statistics/statisticsController.js"></script>-->
 </body>
 </html>

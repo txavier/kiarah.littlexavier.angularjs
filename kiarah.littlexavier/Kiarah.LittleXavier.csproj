@@ -145,9 +145,13 @@
     <Content Include="app\services\authService.js" />
     <Content Include="app\services\dataService.js" />
     <Content Include="app\signup\signupController.js" />
+    <Content Include="app\statistics\addOrUpdateStatisticController.js" />
+    <Content Include="app\statistics\statisticsController.js" />
+    <Content Include="app\templates\add-or-update-statistic.html" />
     <Content Include="app\templates\add-or-update-blog-entry-comment.html" />
     <Content Include="app\templates\add-or-update-blog-entry.html" />
     <Content Include="app\templates\auth-home.html" />
+    <Content Include="app\templates\statistics.html" />
     <Content Include="app\templates\blog-entry-comments.html" />
     <Content Include="app\templates\home.html" />
     <Content Include="app\templates\login.html" />

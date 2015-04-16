@@ -29,5 +29,7 @@ namespace Kiarah.LittleXavier.Core.Objects
         public int? year { get; set; }
 
         public int? month { get; set; }
+
+        public string key { get; set; }
     }
 }

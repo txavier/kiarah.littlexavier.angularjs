@@ -51,6 +51,21 @@ function config($routeProvider, $locationProvider) {
             controller: 'authHomeController',
             templateUrl: '/app/templates/auth-home.html'
         })
+        .when('/statistics/:key', {
+            templateUrl: '/app/templates/statistics.html',
+            controller: 'statisticsController',
+            controllerAs: 'vm'
+        })
+        .when('/add-or-update-statistic/:key', {
+            templateUrl: '/app/templates/add-or-update-statistic.html',
+            controller: 'addOrUpdateStatisticController',
+            controllerAs: 'vm'
+        })
+        .when('/add-or-update-statistic/:key/:statisticId', {
+            templateUrl: '/app/templates/add-or-update-statistic.html',
+            controller: 'addOrUpdateStatisticController',
+            controllerAs: 'vm'
+        })
         .otherwise({ redirectTo: '/home' });
 
     $locationProvider.html5Mode({

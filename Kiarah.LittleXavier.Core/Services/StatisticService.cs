@@ -25,7 +25,8 @@ namespace Kiarah.LittleXavier.Core.Services
             var result = searchCriteria == null ?
                Get()
                : Get(
-               filter: i => searchCriteria.searchText == null ? true
+               filter: i => searchCriteria.searchText == null ? 
+                   (string.IsNullOrEmpty(searchCriteria.key) ? true : i.statisticKey == searchCriteria.key)
                    : i.statisticKey.Contains(searchCriteria.searchText) || searchCriteria.searchText.Contains(i.statisticKey)
                    || i.statisticValue.Contains(searchCriteria.searchText) || searchCriteria.searchText.Contains(i.statisticValue),
                orderBy: j => searchCriteria.orderBy == "messageTitle" ? j.OrderBy(k => k.statisticKey) : j.OrderBy(k => k.statisticKey),

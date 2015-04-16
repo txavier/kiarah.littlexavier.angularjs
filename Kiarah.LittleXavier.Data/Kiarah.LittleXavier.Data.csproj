@@ -74,6 +74,10 @@
     <Compile Include="Migrations\201504120142377_RemoveRequiredAttributeFromBlogEntryTitle.Designer.cs">
       <DependentUpon>201504120142377_RemoveRequiredAttributeFromBlogEntryTitle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504160353010_AddUnitToStatistic.cs" />
+    <Compile Include="Migrations\201504160353010_AddUnitToStatistic.Designer.cs">
+      <DependentUpon>201504160353010_AddUnitToStatistic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -99,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504120142377_RemoveRequiredAttributeFromBlogEntryTitle.resx">
       <DependentUpon>201504120142377_RemoveRequiredAttributeFromBlogEntryTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504160353010_AddUnitToStatistic.resx">
+      <DependentUpon>201504160353010_AddUnitToStatistic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

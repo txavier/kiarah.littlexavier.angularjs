@@ -10,7 +10,10 @@
 
         vm.blogEntries = [];
         vm.categories = [];
-        vm.ageInWeeks = 0;
+        vm.ageStatistic = {};
+        vm.ageStatistic.unit = 0;
+        vm.ageStatistic.value = '';
+        vm.ageStatistic.key = 'age';
         vm.weightDisplay = '';
         vm.heightDisplay = '';
 
@@ -78,9 +81,10 @@
         }
 
         function getAgeInWeeks() {
-            vm.ageInWeeks = 30;
-
-            return vm.ageInWeeks;
+            return dataService.getEntity('statistics', vm.ageStatistic.key).then(function (data) {
+                vm.ageStatistic.unit = data[0].statisticUnit;
+                vm.ageStatistic.value = data[0].statisticValue;
+            });
         }
 
         function getBlogEntries() {

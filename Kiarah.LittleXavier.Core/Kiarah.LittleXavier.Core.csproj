@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ViewModels\AgeStatisticViewModel.cs" />
     <Compile Include="Models\ViewModels\BlogEntryCommentViewModel.cs" />
     <Compile Include="Interfaces\IBlogEntryCommentService.cs" />
     <Compile Include="Interfaces\IStatisticService.cs" />
