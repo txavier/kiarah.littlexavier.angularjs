@@ -14,8 +14,10 @@
         vm.ageStatistic.unit = 0;
         vm.ageStatistic.value = '';
         vm.ageStatistic.key = 'age';
-        vm.weightDisplay = '';
-        vm.heightDisplay = '';
+        vm.weightStatistic = {};
+        vm.heightStatistic = {};
+        vm.weightStatistic.key = 'weight';
+        vm.heightStatistic.key = 'height';
 
         vm.authentication = {};
         vm.authentication.userName = authService.authentication.userName;
@@ -69,21 +71,29 @@
         }
 
         function getHeightDisplay() {
-            vm.heightDisplay = '23 cm tall';
+            return dataService.getEntity('statistics', vm.heightStatistic.key).then(function (data) {
+                vm.heightStatistic.unit = data[0].statisticUnit;
+                vm.heightStatistic.value = data[0].statisticValue;
 
-            return vm.heightDisplay;
+                return vm.heightStatistic;
+            });
         }
 
         function getWeightDisplay() {
-            vm.weightDisplay = '23 lbs 1 ounce';
+            return dataService.getEntity('statistics', vm.weightStatistic.key).then(function (data) {
+                vm.weightStatistic.unit = data[0].statisticUnit;
+                vm.weightStatistic.value = data[0].statisticValue;
 
-            return vm.weightInOunces;
+                return vm.weightStatistic;
+            });
         }
 
         function getAgeInWeeks() {
             return dataService.getEntity('statistics', vm.ageStatistic.key).then(function (data) {
                 vm.ageStatistic.unit = data[0].statisticUnit;
                 vm.ageStatistic.value = data[0].statisticValue;
+
+                return vm.ageStatistic;
             });
         }
 

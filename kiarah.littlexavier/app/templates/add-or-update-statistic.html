@@ -4,6 +4,9 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
+<div>
+    <a class="btn btn-blog-entry" href="#/statistic/{{ vm.key }}">View All {{ vm.key }}</a>
+</div>
 <div class="row" style="padding:14px;">
     Value
     <input type="text" class="form-control" data-ng-model="vm.statistic.statisticValue" />
@@ -17,6 +20,6 @@
     <input type="text" class="form-control" data-ng-model="vm.statistic.date" />
 </div>
 <div class="row" style="padding:14px;">
-    <a class="btn btn-default" data-ng-click="vm.addOrUpdate(vm.statistic)">Save</a>
+    <a class="btn btn-blog-entry" data-ng-click="vm.addOrUpdate(vm.statistic)">Save</a>
     <!--<a class="btn btn-default" data-ng-click="vm.send(vm.statistic)">Send</a>-->
 </div>

@@ -151,6 +151,9 @@
     <Content Include="app\templates\add-or-update-blog-entry-comment.html" />
     <Content Include="app\templates\add-or-update-blog-entry.html" />
     <Content Include="app\templates\auth-home.html" />
+    <Content Include="app\templates\my-castle.html" />
+    <Content Include="app\templates\my-journey.html" />
+    <Content Include="app\templates\my-family.html" />
     <Content Include="app\templates\statistics.html" />
     <Content Include="app\templates\blog-entry-comments.html" />
     <Content Include="app\templates\home.html" />

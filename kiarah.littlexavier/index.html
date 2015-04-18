@@ -149,8 +149,10 @@
                         <p>Today Kiarah is {{ vm.ageStatistic.value }} {{ vm.ageStatistic.unit }} old.</p>
                         <a class="btn btn-blog-entry" href="#/add-or-update-statistic/age">Update</a>
                         <hr />
-                        <p>On the last doctor's visit Kiarah was {{ vm.weightDisplay }}.</p>
-                        <p>She was also measured to be {{ vm.heightDisplay }} tall.</p>
+                        <p>On the last doctor's visit Kiarah was {{ vm.weightStatistic.value }} {{ vm.weightStatistic.unit }}.</p>
+                        <a class="btn btn-blog-entry" href="#/add-or-update-statistic/weight">Update</a>
+                        <p>She was also measured to be {{ vm.heightStatistic.value }} {{ vm.heightStatistic.unit }} tall.</p>
+                        <a class="btn btn-blog-entry" href="#/add-or-update-statistic/height">Update</a>
                     </div>
                     <div class="col-md-6 column">
                         <div data-ng-view="">
