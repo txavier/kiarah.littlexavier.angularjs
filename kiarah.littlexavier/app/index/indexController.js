@@ -66,7 +66,7 @@
                 authService.logOut();
             }
             else {
-                $location.path("/home");
+                $location.path("/login");
             }
         }
 

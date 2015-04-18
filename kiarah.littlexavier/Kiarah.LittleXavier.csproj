@@ -141,12 +141,19 @@
     <Content Include="app\index\indexController.js" />
     <Content Include="app\login\loginController.js" />
     <Content Include="app\blogEntry\blogEntriesController.js" />
+    <Content Include="app\myCastle\addOrUpdateMyCastleController.js" />
+    <Content Include="app\myCastle\myCastleController.js" />
+    <Content Include="app\myFamily\addOrUpdateBlogEntryController.js" />
+    <Content Include="app\myFamily\blogEntriesController.js" />
+    <Content Include="app\myJourney\addOrUpdateBlogEntryController.js" />
+    <Content Include="app\myJourney\blogEntriesController.js" />
     <Content Include="app\services\authInterceptorService.js" />
     <Content Include="app\services\authService.js" />
     <Content Include="app\services\dataService.js" />
     <Content Include="app\signup\signupController.js" />
     <Content Include="app\statistics\addOrUpdateStatisticController.js" />
     <Content Include="app\statistics\statisticsController.js" />
+    <Content Include="app\templates\add-or-update-my-castle.html" />
     <Content Include="app\templates\add-or-update-statistic.html" />
     <Content Include="app\templates\add-or-update-blog-entry-comment.html" />
     <Content Include="app\templates\add-or-update-blog-entry.html" />
@@ -186,6 +193,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\MyCastlesController.cs" />
     <Compile Include="Controllers\BlogEntryCommentsController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\PagePartEntriesController.cs" />

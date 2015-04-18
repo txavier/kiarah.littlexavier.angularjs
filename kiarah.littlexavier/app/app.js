@@ -66,6 +66,21 @@ function config($routeProvider, $locationProvider) {
             controller: 'addOrUpdateStatisticController',
             controllerAs: 'vm'
         })
+         .when('/add-or-update-my-castle', {
+             templateUrl: '/app/templates/add-or-update-my-castle.html',
+             controller: 'addOrUpdateMyCastleController',
+             controllerAs: 'vm'
+         })
+         .when('/add-or-update-my-castle/:myCastleId', {
+             templateUrl: '/app/templates/add-or-update-my-castle.html',
+             controller: 'addOrUpdateMyCastleController',
+             controllerAs: 'vm'
+         })
+        .when('/my-castle', {
+            templateUrl: '/app/templates/my-castle.html',
+            controller: 'myCastleController',
+            controllerAs: 'vm'
+        })
         .otherwise({ redirectTo: '/home' });
 
     $locationProvider.html5Mode({

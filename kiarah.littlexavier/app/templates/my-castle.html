@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+﻿<div class="postList">
+    <div class="post" data-ng-repeat="myCastle in vm.myCastles">
+        <p><a class="btn btn-blog-entry" href="#/add-or-update-my-castle/{{ myCastle.myCastleId }}">Update</a></p>
+        <!--<a class="btn btn-blog-entry" data-ng-click="vm.delete(myCastle.myCastleId)">Delete</a>-->
+        <h3>{{ myCastle.messageTitle }}</h3>
+        <div ta-bind ng-model="myCastle.messageBody"></div>
+        <p>By <a href="/profile/{{ myCastle.userName }}">{{ myCastle.userName }}</a> at {{ myCastle.date | date : format : shortDate }}</p>
+    </div>
+</div>

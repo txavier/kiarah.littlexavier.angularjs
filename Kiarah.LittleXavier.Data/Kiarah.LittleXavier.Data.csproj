@@ -78,6 +78,10 @@
     <Compile Include="Migrations\201504160353010_AddUnitToStatistic.Designer.cs">
       <DependentUpon>201504160353010_AddUnitToStatistic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504181253340_AddedMyCastle.cs" />
+    <Compile Include="Migrations\201504181253340_AddedMyCastle.Designer.cs">
+      <DependentUpon>201504181253340_AddedMyCastle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -106,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504160353010_AddUnitToStatistic.resx">
       <DependentUpon>201504160353010_AddUnitToStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504181253340_AddedMyCastle.resx">
+      <DependentUpon>201504181253340_AddedMyCastle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

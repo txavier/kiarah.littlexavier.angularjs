@@ -54,7 +54,10 @@ var config = {
         'app/blogEntryComments/addOrUpdateBlogEntryCommentController.js',
         'app/blogEntryComments/blogEntryCommentsController.js',
         'app/statistics/addOrUpdateStatisticController.js',
-        'app/statistics/statisticsController.js'
+        'app/statistics/statisticsController.js',
+        'app/myCastle/addOrUpdateMyCastleController.js',
+        'app/myCastle/myCastleController.js',
+
     ],
     angularbundle: 'Scripts/angular-bundle.min.js',
 
@@ -123,6 +126,7 @@ gulp.task('modernizer', ['clean-vendor-scripts', 'bower-restore'], function () {
 gulp.task('angular-bundle', ['clean-vendor-scripts', 'bower-restore'], function () {
     return gulp.src(config.angularsrc)
         .pipe(sourcemaps.init())
+        //.pipe(uglify())
         .pipe(concat('angular-bundle.min.js'))
         .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest('Scripts'));

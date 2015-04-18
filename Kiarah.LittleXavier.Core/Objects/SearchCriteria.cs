@@ -31,5 +31,7 @@ namespace Kiarah.LittleXavier.Core.Objects
         public int? month { get; set; }
 
         public string key { get; set; }
+
+        public object myCastleTitle { get; set; }
     }
 }
