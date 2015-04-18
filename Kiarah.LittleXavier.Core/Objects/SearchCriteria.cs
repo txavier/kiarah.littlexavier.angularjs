@@ -33,5 +33,7 @@ namespace Kiarah.LittleXavier.Core.Objects
         public string key { get; set; }
 
         public object myCastleTitle { get; set; }
+
+        public object myJourneyTitle { get; set; }
     }
 }

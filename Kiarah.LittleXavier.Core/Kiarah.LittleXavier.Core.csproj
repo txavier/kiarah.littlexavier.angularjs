@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\littleXavier\myJourney.cs" />
     <Compile Include="Models\littleXavier\myCastle.cs" />
     <Compile Include="Models\ViewModels\AgeStatisticViewModel.cs" />
     <Compile Include="Models\ViewModels\BlogEntryCommentViewModel.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Interfaces\IPagePartEntryService.cs" />
     <Compile Include="Interfaces\IPageEntryService.cs" />
     <Compile Include="Models\littleXavier\blogEntryComment.cs" />
+    <Compile Include="Models\ViewModels\MyJourneyViewModel.cs" />
     <Compile Include="Models\ViewModels\StatisticViewModel.cs" />
     <Compile Include="Models\ViewModels\CategoryViewModel.cs" />
     <Compile Include="Interfaces\IAuthRepository.cs" />
@@ -91,6 +93,8 @@
     <Compile Include="Interfaces\IAuthService.cs" />
     <Compile Include="Services\BlogEntryCommentService.cs" />
     <Compile Include="Interfaces\IMyCastleService.cs" />
+    <Compile Include="Interfaces\IMyJourneyService.cs" />
+    <Compile Include="Services\MyJourneyService.cs" />
     <Compile Include="Services\MyCastleService.cs" />
     <Compile Include="Models\ViewModels\MyCastleViewModel.cs" />
     <Compile Include="Services\StatisticService.cs" />

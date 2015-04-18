@@ -3,16 +3,16 @@
 
     angular
         .module('app')
-        .controller('blogEntriesController', blogEntriesController);
+        .controller('myJourneyController', myJourneyController);
 
-    blogEntriesController.$inject = ['$scope', '$log', '$routeParams', 'dataService'];
+    myJourneyController.$inject = ['$scope', '$log', '$routeParams', 'dataService'];
 
-    function blogEntriesController($scope, $log, $routeParams, dataService) {
+    function myJourneyController($scope, $log, $routeParams, dataService) {
         var vm = this;
 
-        vm.blogEntries = [];
-        vm.searchBlogEntries = searchBlogEntries;
-        vm.deleteBlogEntry = deleteBlogEntry;
+        vm.myJournies = [];
+        vm.searchMyJournies = searchMyJournies;
+        vm.deleteMyJourney = deleteMyJourney;
         vm.totalItems = 0;
         vm.itemsPerPage = 10;
         vm.currentPage = 1;
@@ -27,8 +27,8 @@
 
         function activate() {
             setSearchCriteria(vm.currentPage, vm.itemsPerPage, vm.orderBy, vm.searchText);
-            searchBlogEntries(vm.searchCriteria);
-            searchBlogEntriesCount(vm.searchCriteria);
+            searchMyJournies(vm.searchCriteria);
+            searchMyJourniesCount(vm.searchCriteria);
 
             return vm;
         }
@@ -38,19 +38,19 @@
 
             setSearchCriteria(vm.currentPage, vm.itemsPerPage, vm.orderBy, vm.searchText);
 
-            searchBlogEntries(vm.searchCriteria);
+            searchMyJournies(vm.searchCriteria);
         }
 
-        function searchBlogEntries(searchCriteria) {
-            return dataService.searchEntity('blogEntries', searchCriteria).then(function (data) {
-                vm.blogEntries = data;
+        function searchMyJournies(searchCriteria) {
+            return dataService.searchEntity('myJournies', searchCriteria).then(function (data) {
+                vm.myJournies = data;
 
-                return vm.blogEntries;
+                return vm.myJournies;
             });
         }
 
-        function searchBlogEntriesCount(searchCriteria) {
-            return dataService.searchEntityCount('blogEntries', searchCriteria).then(function (data) {
+        function searchMyJourniesCount(searchCriteria) {
+            return dataService.searchEntityCount('myJournies', searchCriteria).then(function (data) {
                 vm.totalItems = data || 0;
 
                 return vm.totalItems;
@@ -65,24 +65,24 @@
                 searchText: searchText,
                 year: $routeParams.year,
                 month: $routeParams.month,
-                blogEntryTitle: $routeParams.blogEntryTitle,
-                includeProperties: 'category,blogEntryComments'
+                myJourneyTitle: $routeParams.myJourneyTitle,
+                includeProperties: ''
             }
 
             return vm.searchCriteria;
         }
 
-        function deleteBlogEntry(blogEntryId) {
-            return dataService.deleteEntity('blogEntries', blogEntryId)
+        function deleteMyJourney(myJourneyId) {
+            return dataService.deleteEntity('myJournies', myJourneyId)
                 .then(function (data) {
-                    searchBlogEntries(vm.searchCriteria);
+                    searchMyJournies(vm.searchCriteria);
                 });
         }
 
         function pageChanged() {
             setSearchCriteria(vm.currentPage, vm.itemsPerPage, vm.orderBy, vm.searchText);
 
-            searchBlogEntries(vm.searchCriteria);
+            searchMyJournies(vm.searchCriteria);
         }
     }
 })();

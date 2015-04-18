@@ -1,6 +1,6 @@
-﻿<div class="postList">
+﻿<p><a class="btn btn-blog-entry" href="#/add-or-update-my-castle/{{ myCastles[0].myCastleId }}">Update</a></p>
+<div class="postList">
     <div class="post" data-ng-repeat="myCastle in vm.myCastles">
-        <p><a class="btn btn-blog-entry" href="#/add-or-update-my-castle/{{ myCastle.myCastleId }}">Update</a></p>
         <!--<a class="btn btn-blog-entry" data-ng-click="vm.delete(myCastle.myCastleId)">Delete</a>-->
         <h3>{{ myCastle.messageTitle }}</h3>
         <div ta-bind ng-model="myCastle.messageBody"></div>

@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
 namespace Kiarah.LittleXavier.Core.Models
 {
-    public class MyCastleViewModel
+    public class myJourney
     {
-        public int myCastleId { get; set; }
+        public int myJourneyId { get; set; }
 
         [StringLength(256)]
         public string messageTitle { get; set; }
@@ -20,6 +21,7 @@ namespace Kiarah.LittleXavier.Core.Models
         [StringLength(256)]
         public string userName { get; set; }
 
+        [Column(TypeName = "datetime2")]
         public DateTime date { get; set; }
     }
 }

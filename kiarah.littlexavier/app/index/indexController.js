@@ -18,6 +18,8 @@
         vm.heightStatistic = {};
         vm.weightStatistic.key = 'weight';
         vm.heightStatistic.key = 'height';
+        vm.showCarousel = true;
+        vm.setShowCarousel = setShowCarousel;
 
         vm.authentication = {};
         vm.authentication.userName = authService.authentication.userName;
@@ -68,6 +70,10 @@
             else {
                 $location.path("/login");
             }
+        }
+
+        function setShowCarousel(show) {
+            vm.showCarousel = show;
         }
 
         function getHeightDisplay() {

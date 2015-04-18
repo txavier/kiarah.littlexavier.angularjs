@@ -57,7 +57,7 @@
             <div class="col-md-12 column">
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#/home">K</a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#/home" data-ng-click="vm.setShowCarousel(true)">K</a>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
@@ -68,10 +68,10 @@
                                 <a href="#">My Family</a>
                             </li>
                             <li>
-                                <a href="#">My Journey</a>
+                                <a href="#/my-journey" data-ng-click="vm.setShowCarousel(false)">My Journey</a>
                             </li>
                             <li>
-                                <a href="#/my-castle">My Castle</a>
+                                <a href="#/my-castle" data-ng-click="vm.setShowCarousel(false)">My Castle</a>
                             </li>
                             <li>
                                 <a href="#">My Pics</a>
@@ -111,7 +111,7 @@
         </div>
         <div class="row clearfix">
             <div class="col-md-12 column">
-                <div class="carousel slide" id="carousel-793957">
+                <div class="carousel slide" id="carousel-793957" data-ng-show="vm.showCarousel">
                     <ol class="carousel-indicators">
                         <li class="active" data-slide-to="0" data-target="#carousel-793957">
                         </li>

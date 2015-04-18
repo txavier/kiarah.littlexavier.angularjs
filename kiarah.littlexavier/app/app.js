@@ -1,5 +1,4 @@
-﻿
-angular
+﻿angular
     .module('app', [
         'ngRoute',
         'LocalStorageModule',
@@ -81,6 +80,21 @@ function config($routeProvider, $locationProvider) {
             controller: 'myCastleController',
             controllerAs: 'vm'
         })
+        .when('/add-or-update-my-journey', {
+            templateUrl: '/app/templates/add-or-update-my-journey.html',
+            controller: 'addOrUpdateMyJourneyController',
+            controllerAs: 'vm'
+        })
+         .when('/add-or-update-my-journey/:myJourneyId', {
+             templateUrl: '/app/templates/add-or-update-my-journey.html',
+             controller: 'addOrUpdateMyJourneyController',
+             controllerAs: 'vm'
+         })
+        .when('/my-journey', {
+            templateUrl: '/app/templates/my-journey.html',
+            controller: 'myJourneyController',
+            controllerAs: 'vm'
+        })
         .otherwise({ redirectTo: '/home' });
 
     $locationProvider.html5Mode({
@@ -106,4 +120,4 @@ angular
     .module('app')
     .config(function ($httpProvider) {
         $httpProvider.interceptors.push('authInterceptorService');
-});
+    });

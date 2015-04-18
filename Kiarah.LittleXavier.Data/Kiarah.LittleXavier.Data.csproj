@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201504181253340_AddedMyCastle.Designer.cs">
       <DependentUpon>201504181253340_AddedMyCastle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504181829104_AddMyJourney.cs" />
+    <Compile Include="Migrations\201504181829104_AddMyJourney.Designer.cs">
+      <DependentUpon>201504181829104_AddMyJourney.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -113,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504181253340_AddedMyCastle.resx">
       <DependentUpon>201504181253340_AddedMyCastle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504181829104_AddMyJourney.resx">
+      <DependentUpon>201504181829104_AddMyJourney.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -57,7 +57,8 @@ var config = {
         'app/statistics/statisticsController.js',
         'app/myCastle/addOrUpdateMyCastleController.js',
         'app/myCastle/myCastleController.js',
-
+        'app/myJourney/addOrUpdateMyJourneyController.js',
+        'app/myJourney/myJourneyController.js'
     ],
     angularbundle: 'Scripts/angular-bundle.min.js',
 

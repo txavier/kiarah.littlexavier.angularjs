@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Kiarah.LittleXavier.Core.Models
 {
-    public class MyCastleViewModel
+    public class MyJourneyViewModel
     {
-        public int myCastleId { get; set; }
+        public int myJourneyId { get; set; }
 
         [StringLength(256)]
         public string messageTitle { get; set; }
