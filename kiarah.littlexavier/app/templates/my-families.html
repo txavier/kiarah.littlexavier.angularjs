@@ -1,0 +1,9 @@
+﻿<p><a class="btn btn-blog-entry" href="#/add-or-update-my-family">Add</a></p>
+<div class="postList">
+    <div class="post" data-ng-repeat="myFamily in vm.myFamilies">
+        <a class="btn btn-blog-entry" href="#/add-or-update-my-family/{{ myFamily.myFamilyId }}">Update</a>
+        <a class="btn btn-blog-entry" data-ng-click="vm.delete(myFamily.myFamilyId)">Delete</a>
+        <h3><a href="#/posts/{{ myFamily.date | date : 'yyyy' }}/{{ myFamily.date | date :'M' }}/{{ myFamily.messageTitle | escape }}">{{ myFamily.messageTitle }}</a></h3>
+        <div ta-bind ng-model="myFamily.messageBody"></div>
+    </div>
+</div>

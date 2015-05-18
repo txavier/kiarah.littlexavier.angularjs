@@ -134,6 +134,8 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\authHome\authHomeController.js" />
+    <Content Include="app\myFamily\addOrUpdateMyFamilyController.js" />
+    <Content Include="app\myFamily\myFamiliesController.js" />
     <Content Include="app\blogEntryComments\addOrUpdateBlogEntryCommentController.js" />
     <Content Include="app\blogEntryComments\blogEntryCommentsController.js" />
     <Content Include="app\blogEntry\addOrUpdateBlogEntryController.js" />
@@ -143,8 +145,6 @@
     <Content Include="app\blogEntry\blogEntriesController.js" />
     <Content Include="app\myCastle\addOrUpdateMyCastleController.js" />
     <Content Include="app\myCastle\myCastleController.js" />
-    <Content Include="app\myFamily\addOrUpdateBlogEntryController.js" />
-    <Content Include="app\myFamily\blogEntriesController.js" />
     <Content Include="app\myJourney\addOrUpdateMyJourneyController.js" />
     <Content Include="app\myJourney\myJourneyController.js" />
     <Content Include="app\services\authInterceptorService.js" />
@@ -153,15 +153,16 @@
     <Content Include="app\signup\signupController.js" />
     <Content Include="app\statistics\addOrUpdateStatisticController.js" />
     <Content Include="app\statistics\statisticsController.js" />
+    <Content Include="app\templates\add-or-update-my-family.html" />
     <Content Include="app\templates\add-or-update-my-journey.html" />
     <Content Include="app\templates\add-or-update-my-castle.html" />
     <Content Include="app\templates\add-or-update-statistic.html" />
     <Content Include="app\templates\add-or-update-blog-entry-comment.html" />
     <Content Include="app\templates\add-or-update-blog-entry.html" />
     <Content Include="app\templates\auth-home.html" />
+    <Content Include="app\templates\my-families.html" />
     <Content Include="app\templates\my-castle.html" />
     <Content Include="app\templates\my-journey.html" />
-    <Content Include="app\templates\my-family.html" />
     <Content Include="app\templates\statistics.html" />
     <Content Include="app\templates\blog-entry-comments.html" />
     <Content Include="app\templates\home.html" />
@@ -194,6 +195,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\MyFamiliesController.cs" />
     <Compile Include="Controllers\MyJourniesController.cs" />
     <Compile Include="Controllers\MyCastlesController.cs" />
     <Compile Include="Controllers\BlogEntryCommentsController.cs" />

@@ -1,6 +1,7 @@
-﻿<p><a class="btn btn-blog-entry" href="#/add-or-update-my-journey/{{ myJournies[0].myJourneyId }}">Update</a></p>
+﻿<p><a class="btn btn-blog-entry" href="#/add-or-update-my-journey">Add</a></p>
 <div class="postList">
     <div class="post" data-ng-repeat="myJourney in vm.myJournies">
+        <p><a class="btn btn-blog-entry" href="#/add-or-update-my-journey/{{ myJourney.myJourneyId }}">Update</a></p>
         <!--<a class="btn btn-blog-entry" data-ng-click="vm.delete(myJourney.myJourneyId)">Delete</a>-->
         <h3>{{ myJourney.messageTitle }}</h3>
         <div ta-bind ng-model="myJourney.messageBody"></div>

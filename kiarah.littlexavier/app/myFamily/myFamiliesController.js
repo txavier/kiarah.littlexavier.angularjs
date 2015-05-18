@@ -3,16 +3,16 @@
 
     angular
         .module('app')
-        .controller('blogEntriesController', blogEntriesController);
+        .controller('myFamiliesController', myFamiliesController);
 
-    blogEntriesController.$inject = ['$scope', '$log', '$routeParams', 'dataService'];
+    myFamiliesController.$inject = ['$scope', '$log', '$routeParams', 'dataService'];
 
-    function blogEntriesController($scope, $log, $routeParams, dataService) {
+    function myFamiliesController($scope, $log, $routeParams, dataService) {
         var vm = this;
 
-        vm.blogEntries = [];
-        vm.searchBlogEntries = searchBlogEntries;
-        vm.deleteBlogEntry = deleteBlogEntry;
+        vm.myFamilies = [];
+        vm.searchMyFamilies = searchMyFamilies;
+        vm.deleteMyFamily = deleteMyFamily;
         vm.totalItems = 0;
         vm.itemsPerPage = 10;
         vm.currentPage = 1;
@@ -27,8 +27,8 @@
 
         function activate() {
             setSearchCriteria(vm.currentPage, vm.itemsPerPage, vm.orderBy, vm.searchText);
-            searchBlogEntries(vm.searchCriteria);
-            searchBlogEntriesCount(vm.searchCriteria);
+            searchMyFamilies(vm.searchCriteria);
+            searchMyFamiliesCount(vm.searchCriteria);
 
             return vm;
         }
@@ -38,19 +38,19 @@
 
             setSearchCriteria(vm.currentPage, vm.itemsPerPage, vm.orderBy, vm.searchText);
 
-            searchBlogEntries(vm.searchCriteria);
+            searchMyFamilies(vm.searchCriteria);
         }
 
-        function searchBlogEntries(searchCriteria) {
-            return dataService.searchEntity('blogEntries', searchCriteria).then(function (data) {
-                vm.blogEntries = data;
+        function searchMyFamilies(searchCriteria) {
+            return dataService.searchEntity('myFamilies', searchCriteria).then(function (data) {
+                vm.myFamilies = data;
 
-                return vm.blogEntries;
+                return vm.myFamilies;
             });
         }
 
-        function searchBlogEntriesCount(searchCriteria) {
-            return dataService.searchEntityCount('blogEntries', searchCriteria).then(function (data) {
+        function searchMyFamiliesCount(searchCriteria) {
+            return dataService.searchEntityCount('myFamilies', searchCriteria).then(function (data) {
                 vm.totalItems = data || 0;
 
                 return vm.totalItems;
@@ -65,24 +65,24 @@
                 searchText: searchText,
                 year: $routeParams.year,
                 month: $routeParams.month,
-                blogEntryTitle: $routeParams.blogEntryTitle,
-                includeProperties: 'category,blogEntryComments'
+                myFamilyTitle: $routeParams.myFamilyTitle,
+                includeProperties: 'category,myFamilyComments'
             }
 
             return vm.searchCriteria;
         }
 
-        function deleteBlogEntry(blogEntryId) {
-            return dataService.deleteEntity('blogEntries', blogEntryId)
+        function deleteMyFamily(myFamilyId) {
+            return dataService.deleteEntity('myFamilies', myFamilyId)
                 .then(function (data) {
-                    searchBlogEntries(vm.searchCriteria);
+                    searchMyFamilies(vm.searchCriteria);
                 });
         }
 
         function pageChanged() {
             setSearchCriteria(vm.currentPage, vm.itemsPerPage, vm.orderBy, vm.searchText);
 
-            searchBlogEntries(vm.searchCriteria);
+            searchMyFamilies(vm.searchCriteria);
         }
     }
 })();

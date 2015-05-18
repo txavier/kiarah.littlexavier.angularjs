@@ -58,7 +58,9 @@ var config = {
         'app/myCastle/addOrUpdateMyCastleController.js',
         'app/myCastle/myCastleController.js',
         'app/myJourney/addOrUpdateMyJourneyController.js',
-        'app/myJourney/myJourneyController.js'
+        'app/myJourney/myJourneyController.js',
+        'app/myFamily/addOrUpdateMyFamilyController.js',
+        'app/myFamily/myFamiliesController.js'
     ],
     angularbundle: 'Scripts/angular-bundle.min.js',
 
@@ -161,8 +163,7 @@ gulp.task('css', ['clean-styles', 'bower-restore'], function () {
 });
 
 gulp.task('fonts', ['clean-styles', 'bower-restore'], function () {
-    return
-    gulp.src([
+    return gulp.src([
         config.boostrapfonts,
         config.fontawesomefonts
     ])

@@ -21,9 +21,14 @@ namespace Kiarah.LittleXavier.Data
         public virtual DbSet<statistic> statistics { get; set; }
         public virtual DbSet<myCastle> myCastles { get; set; }
         public virtual DbSet<myJourney> myJournies { get; set; }
+        public virtual DbSet<myFamily> myFamilies { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<myFamily>()
+                .Property(e => e.userName)
+                .IsFixedLength();
+
             modelBuilder.Entity<myJourney>()
                 .Property(e => e.userName)
                 .IsFixedLength();

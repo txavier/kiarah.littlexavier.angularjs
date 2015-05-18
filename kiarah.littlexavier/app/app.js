@@ -95,6 +95,21 @@ function config($routeProvider, $locationProvider) {
             controller: 'myJourneyController',
             controllerAs: 'vm'
         })
+        .when('/add-or-update-my-family/:myFamilyId', {
+            templateUrl: '/app/templates/add-or-update-my-family.html',
+            controller: 'addOrUpdateMyFamilyController',
+            controllerAs: 'vm'
+        })
+        .when('/add-or-update-my-family', {
+            templateUrl: '/app/templates/add-or-update-my-family.html',
+            controller: 'addOrUpdateMyFamilyController',
+            controllerAs: 'vm'
+        })
+        .when('/my-family', {
+            templateUrl: '/app/templates/my-families.html',
+            controller: 'myFamilyController',
+            controllerAs: 'vm'
+        })
         .otherwise({ redirectTo: '/home' });
 
     $locationProvider.html5Mode({
