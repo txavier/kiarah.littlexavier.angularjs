@@ -2,6 +2,25 @@
 
 	http://blogs.msdn.com/b/cdndevs/archive/2015/02/17/using-bower-with-visual-studio-2013.aspx
 
+	http://www.davepaquette.com/archive/2014/10/08/how-to-use-gulp-in-visual-studio.aspx
+
+	Please note the following line is crucial:
+
+	'npm install gulp -g' 
+
+	The -g tells node that you can call gulp from any location in the command line.
+
+	add 'npm install gulp-copy --save-dev'
+	add 'npm install gulp-sourcemaps --save-dev'
+
+	Add NODE_PATH to you path variables:
+	http://stackoverflow.com/questions/24027551/gulp-command-not-found-error-after-installing-gulp
+	http://stackoverflow.com/questions/9587665/nodejs-cannot-find-installed-module-on-windows/9588052#9588052
+
  -- To upload a file from a computer or smartphone the following angular directive can be used.
 
 	https://github.com/danialfarid/ng-file-upload
+
+ -- To add Github for Windows to the system path the following guide was used.
+
+	http://www.chambaud.com/2013/07/08/adding-git-to-path-when-using-github-for-windows/
